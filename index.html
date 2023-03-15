@@ -1,7 +1,32 @@
-<head>
+<html>
   <body>
-    <h1>Amigos, aqui</h1>
+    <script>
+      async function getAllFiles(url, path = './', allFiles = []){
+        let response = await fetch(url);
+        let files = await response.json();
+        for (let file of files) {
+          if ('index.html' === file.name) continue
+          if (file.size == 0) {
+            let local_path = path + file.name + '/'
+            await getAllFiles(file.url, local_path, allFiles)
+            continue
+          }
+          allFiles.push(path + file.name)
+        }
+        return allFiles
+      }
 
-    <div role="main" id="gabi-teste-bea5bd691f75e0897f51"></div><script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script><script type="text/javascript"> new RDStationForms('gabi-teste-bea5bd691f75e0897f51', 'UA-136144379-1').createForm();</script>
-  </body>
-</head>
+      (async () => {
+        let files = await getAllFiles('https://api.github.com/repos/gabrielcechet/gabrielcechet.github.io/contents/')
+
+        let htmlString = '<ul>';
+        for (let file of files) {
+          htmlString += `<li><a href="${file}">${file}</a></li>`
+        }
+        htmlString += '</ul>';
+
+        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+      })()
+    </script>
+  <body>
+</html>
