@@ -13,7 +13,7 @@
     gtag('event', 'landing_page', {
       'event_category': 'RD Landing Pages',
       'event_label': '3800274',
-      'event_action': 'viewed',
+      'event_action': ['viewed', 'clicked'][Math.floor(Math.random() * 2)],
     });
 
   </script>
