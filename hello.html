@@ -10,9 +10,10 @@
 
     gtag('config', 'G-2GZHTEEL8H');
 
-    gtag('event', 'event_category', { 'event_category': 'RD Landing Pages' });
-    gtag('event', 'event_label', { 'event_label': '3800274' });
-    gtag('event', 'event_action', { 'event_action': ['viewed', 'clicked'][Math.floor(Math.random() * 2)] });
+    gtag('event', ['viewed', 'clicked'][Math.floor(Math.random() * 2)], {
+      'event_category': 'RD Landing Pages',
+      'event_label': '3800274',
+    });
 
   </script>
   <h1>Hello!</h1>
