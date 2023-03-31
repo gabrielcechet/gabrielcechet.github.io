@@ -4,11 +4,11 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GZHTEEL8H"></script>
   <script>
-    function getRandom() { return Math.floor(Math.random() * 9999 + 1) }
-
     window.dataLayer = window.dataLayer || [];
 
     function gtag() { dataLayer.push(arguments); }
+
+    random = Math.floor(Math.random() * 9999 + 1)
 
     gtag('js', new Date());
 
@@ -16,35 +16,42 @@
 
     gtag('event', 'landing_page', {
       'event_category': 'RD Landing Pages',
-      'event_label': getRandom(),
+      'event_label': random,
       'event_action': 'viewed',
     });
     gtag('event', 'landing_page', {
       'event_category': 'RD Landing Pages',
-      'event_label': getRandom(),
+      'event_label': random,
       'event_action': 'clicked',
     });
 
     gtag('event', 'rd_lps', {
       'event_category': 'RD Landing Pages',
-      'event_label': getRandom(),
+      'event_label': random,
       'event_action': 'viewed',
     });
     gtag('event', 'rd_lps', {
       'event_category': 'RD Landing Pages',
-      'event_label': getRandom(),
+      'event_label': random,
       'event_action': 'clicked',
     });
 
     gtag('event', 'rd_lps_viewed', {
       'event_category': 'RD Landing Pages',
-      'event_label': getRandom(),
+      'event_label': random,
       'event_action': 'viewed',
     });
     gtag('event', 'rd_lps_clicked', {
       'event_category': 'RD Landing Pages',
-      'event_label': getRandom(),
+      'event_label': random,
       'event_action': 'clicked',
+    });
+
+    gtag('event', 'page_view', {
+      'rd_lps': random,
+    });
+    gtag('event', 'page_click', {
+      'rd_lps': random,
     });
   </script>
 
