@@ -4,8 +4,12 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GZHTEEL8H"></script>
   <script>
+    function getRandom() { return Math.floor(Math.random() * 9999 + 1) }
+
     window.dataLayer = window.dataLayer || [];
+
     function gtag() { dataLayer.push(arguments); }
+
     gtag('js', new Date());
 
     gtag('config', 'G-2GZHTEEL8H');
@@ -31,13 +35,6 @@
       'event_action': 'clicked',
     });
 
-    gtag('event', 'RD Landing Pages:viewed', {
-      'event_label': getRandom(),
-    });
-    gtag('event', 'RD Landing Pages:clicked', {
-      'event_label': getRandom(),
-    });
-
     gtag('event', 'rd_lps', {
       'event_category': 'RD Landing Pages',
       'event_label': getRandom(),
@@ -59,10 +56,8 @@
       'event_label': getRandom(),
       'event_action': 'clicked',
     });
-
-    function getRandom() { return Math.floor(Math.random() * 9999 + 1) }
-
   </script>
+
   <h1>Hello!</h1>
 
   <body>
