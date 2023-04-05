@@ -8,17 +8,32 @@
 
     function gtag() { dataLayer.push(arguments); }
 
-    random = Math.floor(Math.random() * 9999 + 1)
+    random = Math.floor(Math.random() * 10 + 1)
 
     gtag('js', new Date());
 
     gtag('config', 'G-2GZHTEEL8H');
 
-    gtag('event', 'rd_lps:viewed', {
+    gtag('event', 'rd_lps_viewed', {
+      'event_category': 'RD Landing Pages',
       'event_label': random,
+      'event_action': 'viewed',
     });
-    gtag('event', 'rd_lps:clicked', {
+    gtag('event', 'rd_lps_clicked', {
+      'event_category': 'RD Landing Pages',
       'event_label': random,
+      'event_action': 'clicked',
+    });
+
+    gtag('event', 'rd_lps', {
+      'event_category': 'RD Landing Pages',
+      'event_label': random,
+      'event_action': 'clicked',
+    });
+    gtag('event', 'rd_lps', {
+      'event_category': 'RD Landing Pages',
+      'event_label': random,
+      'event_action': 'viewed',
     });
   </script>
 
