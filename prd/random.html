@@ -7,9 +7,11 @@
       function generateRandomName() {
         return 'field_' + Math.random().toString(36).substring(7);
       }
-    
-      document.querySelectorAll('#randomForm input').forEach(input => {
-        input.name = generateRandomName();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("#randomForm input").forEach(input => {
+          input.name = generateRandomName();
+        });
       });
     </script>
 
