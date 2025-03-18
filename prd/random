@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/63d77485-acf6-4760-a6a6-1a9da9f3ba95-loader.js" ></script>
+  </head>
+  <body>
+    <script>
+      function generateRandomName() {
+        return 'field_' + Math.random().toString(36).substring(7);
+      }
+    
+      document.querySelectorAll('#randomForm input').forEach(input => {
+        input.name = generateRandomName();
+      });
+    </script>
+
+    <form id="randomForm">
+      <input type="email" name="email" />
+      <input name="name" />
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>
