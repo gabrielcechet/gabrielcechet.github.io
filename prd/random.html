@@ -1,24 +1,22 @@
 <html>
   <head>
-    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/63d77485-acf6-4760-a6a6-1a9da9f3ba95-loader.js" ></script>
+    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/63d77485-acf6-4760-a6a6-1a9da9f3ba95-loader.js"></script>
   </head>
   <body>
+    <form id="randomForm">
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="submit" value="Enviar" />
+    </form>
+
     <script>
       function generateRandomName() {
-        return 'field_' + Math.random().toString(36).substring(7);
+        return 'form_' + Math.random().toString(36).substring(7);
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll("#randomForm input").forEach(input => {
-          input.name = generateRandomName();
-        });
+        document.getElementById("randomForm").name = generateRandomName();
       });
     </script>
-
-    <form id="randomForm">
-      <input type="email" name="email" />
-      <input name="name" />
-      <input type="submit" value="Enviar" />
-    </form>
   </body>
 </html>
