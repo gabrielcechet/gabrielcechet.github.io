@@ -1,7 +1,6 @@
 <html>
   <head>
     <script type="text/javascript" async src="https://d2umgtt5tsqx05.cloudfront.net/js/loader-scripts/3a4d3fba-4a3c-4e8e-a3b6-caf8023117cd-loader.js" ></script>
-    <script type="text/javascript" async src="https://d2umgtt5tsqx05.cloudfront.net/js/loader-scripts/3a4d3fba-4a3c-4e8e-a3b6-caf8023117cd-loader.js" ></script>
   </head>
   <body>
     <form id="randomForm">
@@ -9,6 +8,12 @@
       <input type="text" name="name" placeholder="Nome" required />
       <input type="submit" value="Enviar" />
     </form>
+
+     <script>
+      document.getElementById("randomForm").addEventListener("submit", function () {
+        this.dispatchEvent(new Event("submit", { bubbles: true }));
+      });
+    </script>
 
     <script>
       function generateRandomName() {
