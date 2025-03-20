@@ -10,9 +10,11 @@
       <input type="submit" value="Enviar" />
     </form>
 
-     <script>
-      document.getElementById("randomForm").addEventListener("submit", function () {
-        this.dispatchEvent(new Event("submit", { bubbles: true }));
+ <script>
+      document.getElementById("randomForm").addEventListener("submit", function (event) {
+        setTimeout(() => {
+          this.dispatchEvent(new Event("submit", { bubbles: true }));
+        }, 10);
       });
     </script>
 
