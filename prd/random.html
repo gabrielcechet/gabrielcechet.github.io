@@ -10,10 +10,13 @@
       <input type="submit" value="Enviar" />
     </form>
 
- <script>
+    <script>
       document.getElementById("randomForm").addEventListener("submit", function (event) {
         setTimeout(() => {
-          this.dispatchEvent(new Event("submit", { bubbles: true }));
+          let form = this.cloneNode(true); // Clona o formulário para evitar conflitos
+          form.action = this.action + "?t=" + Date.now(); // Adiciona um timestamp único
+          document.body.appendChild(form); // Adiciona o clone ao DOM
+          form.submit(); // Submete o clone
         }, 100);
       });
     </script>
